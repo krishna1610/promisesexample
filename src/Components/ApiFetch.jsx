@@ -44,11 +44,7 @@ class ApiFetch extends React.Component {
         );
       });
     }
-    return (
-      <div className="container">
-        <ul class="list-group">{result}</ul>
-      </div>
-    );
+    return <div className="container">{result}</div>;
   }
 }
 export default ApiFetch;
