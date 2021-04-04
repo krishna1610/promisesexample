@@ -1,4 +1,5 @@
 import React from "react";
+import SourcesList from "./SourcesList";
 
 const url =
   "https://newsapi.org/v2/sources?apiKey=b5e4aade57854b568497b5284c3d2c3e";
@@ -32,19 +33,9 @@ class ApiFetch extends React.Component {
       });
   }
   render() {
-    let result;
-    if (this.state.error) {
-      result = <p>{this.state.error}</p>;
-    } else {
-      result = this.state.sources.map((source, index) => {
-        return (
-          <li className="list-group-item" key={index}>
-            {source.name}
-          </li>
-        );
-      });
-    }
-    return <div className="container">{result}</div>;
+    return (
+      <SourcesList error={this.state.error} sources={this.state.sources} />
+    );
   }
 }
 export default ApiFetch;
